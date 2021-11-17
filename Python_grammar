@@ -1,0 +1,59 @@
+#remove 사용
+a = [1,2,3,4,1,5,2]
+a.remove(1)
+print(a) #[2,3,4,1,5,2]
+remove_set = {2,5}
+result = [i for i in a if i not in remove_set]  # remove_set안의 숫자들 빼고 출력함.
+#[3,4,1]
+#point-> is not 이 아닌 not in 이었던 점, for i in a 이후 if문으로 바로 작성한점
+print(result)
+
+#문자열 따옴표 사용
+str_1 = "Hello Python"  
+str_2 = "Hello \"Python!\" You should use it! isn't it?" # \의 위치 잘보기! 
+#큰따옴표 안의 작은 따옴표 알아서 인식되는것!
+print(str_1)   #"Hello Python"
+print(str_2)   #"Hello "Python" You should use it! isn't it?"
+#str_1[2]='y' 파이썬에서 string으로 선언된 문자열은 임의로 이렇게 character을 바꿀 수 없다.
+
+dic_a = dict()
+dic_a['Apple'] = '사과'
+dic_a['Banana'] = '바나나'
+
+print(dic_a)
+b = {'Apple' : '사과', 'Banana': '바나나'}
+print(b)  # {'Apple' : '사과', 'Banana': '바나나'}
+
+#딕셔너리 key값들 리스트로 출력
+print(list(b.keys()))  #['Apple', 'Banana']
+print(list(b.values()))  #['사과', '바나나']
+
+#집합 set
+data1 = set([1,1,1,2,2,3,3,5])  
+print(data1)# {1,2,3}
+
+data2 = {1,1,2,2,3,3,4}
+print(data2)# {1,2,3,4}
+
+#합집합
+print(data1 | data2)  # {1,2,3,4,5}
+
+#교집합 
+print(data1 & data2) # {1,2,3}
+
+# 차집합
+print(data1-data2)  #{5} 1,2,3,5중에서 같은 1,2,3빼고 남은 5를 출력
+
+#집합에서 추가 add
+data1.add(6)
+print(data1)
+
+#집합에서 여러개 원소 추가
+data1.update([3,9])
+print(data1)
+
+#집합에서 원소 제거
+data1.remove(3)
+print(data1)
+
+#자주하는 실수 : data1 = data1.add(3) 이런식으로 변수 선언을 다시 함. 절대 이러지 말것!
