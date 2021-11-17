@@ -56,4 +56,24 @@ print(data1)
 data1.remove(3)
 print(data1)
 
+#if else문 한줄에 가져다 쓰기
+result = 85
+result = "Success" if result>80 else 'Fail'  #if~ 맞으면 if 앞의 것이 result에 들어가고, else에 해당하면 else뒤에 것으로 result에 들어감.
+print(result)  #Success출력
+
+#부등호 
+result = 85
+if result >80 and result <100:
+  print("Success")  #실행
+else:
+  print("Fail")
+
+#파이썬 특징, 부등호 바로 사용 가능
+if 80<result<100:
+  print("R Success") #실행
+else:
+  print("Fail")
+
+  
 #자주하는 실수 : data1 = data1.add(3) 이런식으로 변수 선언을 다시 함. 절대 이러지 말것!
+
