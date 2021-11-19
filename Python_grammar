@@ -74,6 +74,69 @@ if 80<result<100:
 else:
   print("Fail")
 
-  
+
+# for문 // 여기선 print방식과 student로 조건문 쓴걸 더 주목
+score = [90,80,87,59,88]
+student = {2,4} # 2, 4번째 학생
+for i in range(5):
+  if i+1 in student:  #2번째 학생 score[1]번방 점수 => i+1로 student에 해당 번호 있는지 확인
+    print(i+1,"번째 학생 점수는", score[i], "입니다.")
+    #2 번째 학생 점수는 80 입니다.
+    #4 번째 학생 점수는 59 입니다.  --> int형, str형 같이 사용가능한데 띄어쓰기가 됨.
+  elif score[i]>80:
+    print(f"{i+1}번째 학생의 점수는 {score[i]}입니다.")   #print에서 간단하게 쓸 수 있는 방식이니 기억할 것!
+    #1번째 학생의 점수는 90입니다.
+    #3번째 학생의 점수는 87입니다.
+    #5번째 학생의 점수는 88입니다.  로 출력됩니다.
+
+
+# 함수
+arr = {1,2,3,4,5}  # set
+arr2 = (1,2,3,4,5)  #tuple
+
+
+def func():
+  arr.add(6)   #리스트, set등 이런 것들은 전역변수 가져다 써도 global표시 안해도 됨.
+
+  print(arr)
+
+  print(type(arr))  #<class 'set'>
+  print(type(arr2))  #<class 'tuple'>   #tuple은 변경 못함.
+
+# 람다식 이용
+print((lambda a,b:a+b)(3,7))  # a=3, b=7이 들어가서 a+b조건식 수행 10이 출력됨.
+
+arr = [('김길동',32),('아무개', 18)]  #리스트 안에 튜플 형태
+
+#함수 이용해서 sort하는 방법
+def m_key(x):
+  return x[1]
+print(sorted(arr, key=m_key))#[('아무개',18), ('김길동', 32)]
+
+#람다식으로 이용 , 이번에는 이름순으로 정렬
+print(sorted(arr, key = lambda x:x[0]))   #[('김길동', 32), ('아무개',18)]
+
+
+#람다식 이용해서 각 list 위치 별로 더해주는 경우
+list_a = [1,2,3,4,5]
+list_b = [6,7,8,9,10]
+result = list(map(lambda a,b: a+b, list_a, list_b))  #리스트 부분 lambda 쓴 것 다른 것 확인
+print(result)  #[7, 9, 11, 13, 15]
+
+#내장함수 eval (str으로 된 계산식을 자동으로 계산해줌)
+print(eval("3+7*5"))  #38출력
+
+#sorted 와 sort의 차이 (sorted)
+arr = [3,5,7,1,0]
+print(sorted(arr,reverse=False))  #정렬 후 새로운 배열로 인식하여 출력함.
+print(arr)  #기존의 arr는 바뀌지 않은 걸 볼 수 있음.
+
+#sort
+arr.sort()
+
+print(arr)  #[0,1,3,5,7]로 arr이 바뀐 것을 알 수 있음.
+
+
+func()
 #자주하는 실수 : data1 = data1.add(3) 이런식으로 변수 선언을 다시 함. 절대 이러지 말것!
 
