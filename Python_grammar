@@ -1,4 +1,4 @@
-#remove 사용
+## remove 사용
 a = [1,2,3,4,1,5,2]
 a.remove(1)
 print(a) #[2,3,4,1,5,2]
@@ -8,13 +8,15 @@ result = [i for i in a if i not in remove_set]  # remove_set안의 숫자들 빼
 #point-> is not 이 아닌 not in 이었던 점, for i in a 이후 if문으로 바로 작성한점
 print(result)
 
-#문자열 따옴표 사용
+## 문자열 따옴표 사용
 str_1 = "Hello Python"  
 str_2 = "Hello \"Python!\" You should use it! isn't it?" # \의 위치 잘보기! 
-#큰따옴표 안의 작은 따옴표 알아서 인식되는것!
+
+## 큰따옴표 안의 작은 따옴표 알아서 인식되는것!
 print(str_1)   #"Hello Python"
 print(str_2)   #"Hello "Python" You should use it! isn't it?"
-#str_1[2]='y' 파이썬에서 string으로 선언된 문자열은 임의로 이렇게 character을 바꿀 수 없다.
+
+## str_1[2]='y' 파이썬에서 string으로 선언된 문자열은 임의로 이렇게 character을 바꿀 수 없다.
 
 dic_a = dict()
 dic_a['Apple'] = '사과'
@@ -24,51 +26,51 @@ print(dic_a)
 b = {'Apple' : '사과', 'Banana': '바나나'}
 print(b)  # {'Apple' : '사과', 'Banana': '바나나'}
 
-#딕셔너리 key값들 리스트로 출력
+## 딕셔너리 key값들 리스트로 출력
 print(list(b.keys()))  #['Apple', 'Banana']
 print(list(b.values()))  #['사과', '바나나']
 
-#집합 set
+## 집합 set
 data1 = set([1,1,1,2,2,3,3,5])  
 print(data1)# {1,2,3}
 
 data2 = {1,1,2,2,3,3,4}
 print(data2)# {1,2,3,4}
 
-#합집합
+## 합집합
 print(data1 | data2)  # {1,2,3,4,5}
 
-#교집합 
+## 교집합 
 print(data1 & data2) # {1,2,3}
 
-# 차집합
+## 차집합
 print(data1-data2)  #{5} 1,2,3,5중에서 같은 1,2,3빼고 남은 5를 출력
 
-#집합에서 추가 add
+## 집합에서 추가 add
 data1.add(6)
 print(data1)
 
-#집합에서 여러개 원소 추가
+## 집합에서 여러개 원소 추가
 data1.update([3,9])
 print(data1)
 
-#집합에서 원소 제거
+## 집합에서 원소 제거
 data1.remove(3)
 print(data1)
 
-#if else문 한줄에 가져다 쓰기
+## if else문 한줄에 가져다 쓰기
 result = 85
 result = "Success" if result>80 else 'Fail'  #if~ 맞으면 if 앞의 것이 result에 들어가고, else에 해당하면 else뒤에 것으로 result에 들어감.
 print(result)  #Success출력
 
-#부등호 
+## 부등호 
 result = 85
 if result >80 and result <100:
   print("Success")  #실행
 else:
   print("Fail")
 
-#파이썬 특징, 부등호 바로 사용 가능
+## 파이썬 특징, 부등호 바로 사용 가능
 if 80<result<100:
   print("R Success") #실행
 else:
@@ -90,7 +92,7 @@ for i in range(5):
     #5번째 학생의 점수는 88입니다.  로 출력됩니다.
 
 
-# 함수
+## 함수
 arr = {1,2,3,4,5}  # set
 arr2 = (1,2,3,4,5)  #tuple
 
@@ -103,30 +105,30 @@ def func():
   print(type(arr))  #<class 'set'>
   print(type(arr2))  #<class 'tuple'>   #tuple은 변경 못함.
 
-# 람다식 이용
+## 람다식 이용
 print((lambda a,b:a+b)(3,7))  # a=3, b=7이 들어가서 a+b조건식 수행 10이 출력됨.
 
 arr = [('김길동',32),('아무개', 18)]  #리스트 안에 튜플 형태
 
-#함수 이용해서 sort하는 방법
+## 함수 이용해서 sort하는 방법
 def m_key(x):
   return x[1]
 print(sorted(arr, key=m_key))#[('아무개',18), ('김길동', 32)]
 
-#람다식으로 이용 , 이번에는 이름순으로 정렬
+## 람다식으로 이용 , 이번에는 이름순으로 정렬
 print(sorted(arr, key = lambda x:x[0]))   #[('김길동', 32), ('아무개',18)]
 
 
-#람다식 이용해서 각 list 위치 별로 더해주는 경우
+## 람다식 이용해서 각 list 위치 별로 더해주는 경우
 list_a = [1,2,3,4,5]
 list_b = [6,7,8,9,10]
 result = list(map(lambda a,b: a+b, list_a, list_b))  #리스트 부분 lambda 쓴 것 다른 것 확인
 print(result)  #[7, 9, 11, 13, 15]
 
-#내장함수 eval (str으로 된 계산식을 자동으로 계산해줌)
+## 내장함수 eval (str으로 된 계산식을 자동으로 계산해줌)
 print(eval("3+7*5"))  #38출력
 
-#sorted 와 sort의 차이 (sorted)
+##sorted 와 sort의 차이 (sorted)
 arr = [3,5,7,1,0]
 print(sorted(arr,reverse=False))  #정렬 후 새로운 배열로 인식하여 출력함.
 print(arr)  #기존의 arr는 바뀌지 않은 걸 볼 수 있음.
@@ -140,3 +142,37 @@ print(arr)  #[0,1,3,5,7]로 arr이 바뀐 것을 알 수 있음.
 func()
 #자주하는 실수 : data1 = data1.add(3) 이런식으로 변수 선언을 다시 함. 절대 이러지 말것!
 
+
+
+## 반올림 함수 사용하는 법
+1. 예를 들어 10.11234의 숫자를 그냥 정수로만 보이고 싶다. (소수 첫째자리에서 반올림해서 정수처럼 보이고 싶다.)
+-> round(10.11234)
+
+2. 이번에는 소수 둘째자리에서 반올림해서 첫째자리까지 보이고 싶다.
+-> round(10.11234, 1)
+
+3. 나는 소수가 아니라 정수자리에서 반올림을 보이고 싶다. (12 -> 10과 20중 10에 더 가까우니 10이라고 표현)
+-> round(12.1 , -1)
+
+
+
+## 파이썬에서 아스키코드 번호 알아내는 법
+k = 'A'   # 대문자 A의 번호가 뭐였더라?
+print(ord(k))  #ord를 이용해서 65라는 것을 알아낼 수 있다.
+
+참고로 A-Z는 65~90 
+소문자 a-z는 97~122
+
+65와 97를 기억해두고 25씩 더해서 마무리 짓는걸로!
+
+
+##Input 받은 후 한글자씩 리스트 형태로 저장하고 싶다면?
+T = list(input())  #입력받아서 바로 list형태로 저장하면 됩니다.
+
+##만약 Input 받은 후 빈칸마다 split하고 싶다면
+T = list(map(int, input().split()))
+
+
+## 대문자/소문자 바꾸는 법
+T = input()
+print(T.upper())
